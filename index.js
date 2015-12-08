@@ -7,6 +7,10 @@ var store = require('./store').create();
 
 app.use(bodyParser.json());
 
+app.get('/', function(req, res) {
+  res.status(200).send('Everything is awesome!');
+});
+
 app.get('/books', function(req, res) {
   res.status(200).send({ books: store.getAll() });
 });
@@ -29,7 +33,7 @@ app.put('/books/:id', function(req, res) {
   res.status(200).send(book);
 });
 
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log('Library service is listening on port ', this.address().port);
 });
 
