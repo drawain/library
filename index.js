@@ -8,7 +8,7 @@ var store = require('./store').create();
 app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
-  res.status(200).send('Everything is awesome!');
+  res.status(200).send('Everything is awesome 2!');
 });
 
 app.get('/books', function(req, res) {
