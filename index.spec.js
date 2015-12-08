@@ -10,7 +10,7 @@ describe('Library', function() {
 
   var checkBooks = function(expectedBooks, done) {
     request(app)
-      .get('/books')
+      .get('/book')
       .set('Accept', 'application/json')
       .expect('Content-Type', /json/)
       .expect(200, {
